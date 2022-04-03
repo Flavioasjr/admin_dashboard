@@ -1,5 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
 
+:root {
+    --containerSize: auto;
+    --containerHeight: 173rem;
+    --cardHeight: 20rem;
+    --announcementsHeight: 59rem;
+}
+
+@media (min-width: 576px) {
+    :root {
+        --containerSize: auto;
+        --containerHeight: 140rem;
+        --cardHeight: 16rem;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --containerSize: auto;
+        --containerHeight: 140rem;
+        --cardHeight: 14rem;
+    }
+}
+
+@media (min-width: 913px) {
+    :root {
+        --containerSize: 90%;
+        --containerHeight: 100rem;
+        --cardHeight: 18rem;
+    }
+}
+
+@media (min-width: 1461px) {
+    :root {
+        --cardHeight: 20rem;
+        --announcementsHeight: 40rem
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
 * {   
    box-sizing: border-box;
     padding: 0;
@@ -8,15 +50,16 @@
 }
 
 body {
+    font-size: 1.6rem;
     background-color: black;
 }
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
-    width: min(90%, 1300px);
+    grid-template-rows: minmax(10rem,15rem);
+    width: var(--containerSize);
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: var(--containerHeight);
 }
 
 .dashboard {
@@ -37,7 +80,7 @@ body {
 
 .dashboard > div {
     padding: 30px 40px 40px 15px;
-    font-size: 25px;
+    font-size: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 6px;
@@ -47,7 +90,7 @@ body {
 .dashboard > ul li {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .dashboard > ul > li:nth-child(6) {
@@ -63,7 +106,7 @@ li {
     grid-row: 1 / 2;
     background-color: #fbfbfb;
     padding-top: 15px;
-    padding: 15px 30px 0 30px;
+    padding: 15px 30px 30px 30px;
     z-index: 1;
     box-shadow: 0px 0px 6px 1px #24232363;
 }
@@ -78,7 +121,7 @@ li {
     gap: 15px;
     align-items: center;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .header-line1 > div > input {
@@ -117,12 +160,12 @@ li {
 }
 
 .header-line2 > div  p {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 900;
 }
 
 .header-line2 > div  h2 {
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .main {
@@ -137,7 +180,7 @@ li {
 
 .main > div > p {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 900;
 }
 
@@ -149,7 +192,7 @@ li {
 
 .card {
     background-color: #fbfbfb;
-    height: 160px;
+    height: var(--cardHeight);
     padding: 25px 20px 0 20px;
     border-left: 5px solid #efc80a;
     border-radius: 5px;
@@ -157,14 +200,14 @@ li {
 }
 
 .card  p {
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #95969b;
 }
 
 .card .title {
     font-weight: 900;
-    font-size: 16px;
+    font-size: 1.6rem;
     color: black;
 }
 
@@ -179,7 +222,7 @@ li {
 .announcements-grid {
     display: grid;
     align-content: space-between;
-    max-height: 529px;
+    max-height: var(--announcementsHeight);
 }
 
 .announcements-grid > div > p {
@@ -190,7 +233,7 @@ li {
 
 .main-announcements {
     background: #fbfbfb;
-    font-size: 13px;
+    font-size: 1.3rem;
     padding: 0 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -204,7 +247,7 @@ li {
 .announcements-content {
     padding-bottom: 5px;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 1rem;
     color: #5a5b5c;
 }
 
@@ -221,7 +264,7 @@ li {
 .main-trending {
     background-color: #fbfbfb;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 1.3rem;
     padding: 10px;
     color: #5a5b5c;
     border-radius: 5px;
@@ -236,3 +279,4 @@ li {
     font-weight: 900;
     color: black;
 }
+

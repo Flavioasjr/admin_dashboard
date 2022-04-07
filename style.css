@@ -98,7 +98,11 @@ li {
 
 .header-line1, .header-line2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.header-line1-text {
+    display: none;
 }
 
 .header-line1 > div{
@@ -110,11 +114,11 @@ li {
 }
 
 .header-line1 > div > input {
-    width: 20rem;
+    width: 25rem;
     background-color: #eaebf3;
     border: 1px solid #eaebf3;
     border-radius: 15px;
-    height: 20px;
+    height: 2.5rem;
     padding: 10px;
 }
 
